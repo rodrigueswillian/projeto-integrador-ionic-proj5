@@ -1,14 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-// 1. Importar dependências
-import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
-
-// 2. Define redirecionamentos
-const toLogin = () => redirectUnauthorizedTo(['/login']);
-const isLogged = () => redirectLoggedInTo (['/home']);
-
-
 const routes: Routes = [
   {
     path: '',
@@ -18,9 +10,7 @@ const routes: Routes = [
  
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-
-  
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'news',
@@ -36,29 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'view/:id',
-    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule),
-
-    //Só pode ser vista se tiver logado
-    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-
-    
-    //Só pode ser vista se não tiver logado
-    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: isLogged }
-  },
-  {
-    path: 'logout',
-    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule),
-
-      //Só pode ser vista se tiver logado
-      canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
   },
   {
     path: '**',
