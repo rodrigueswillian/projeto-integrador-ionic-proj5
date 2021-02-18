@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+
+import { AngularFireAuth } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,5 +16,9 @@ export class AppComponent {
     { title: 'e404', url: '/e404', icon: 'alert-circle' },
     { title: 'Lixo', url: '/folder/Spam', icon: 'trash' },
   ];
-  constructor() {}
+  constructor(
+    
+       // 2. Injeta dependências
+       public auth: AngularFireAuth,
+  ) {}
 }
