@@ -28,7 +28,7 @@ export class NewsPage implements OnInit {
 
     // 4. Obtenha as notícias da API REST (JSON) usando HTTP
     this.http.get(this.apiURL).subscribe(
-      (data) => {
+      (data: any) => {
 
         // 5. Atribui À  VIEW De Notícias
         this.newsList = data.articles.slice(0, this.apiITens);

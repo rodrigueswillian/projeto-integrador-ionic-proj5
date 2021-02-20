@@ -1,6 +1,6 @@
 {
-  "appId": "com.github.rodrigueswillian.nba_news",
-  "appName": "proj01",
+  "appId": "nbaNews.com.github.rodrigueswillian",
+  "appName": "nbaNews",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

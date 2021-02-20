@@ -21,4 +21,9 @@ export class AppComponent {
        // 2. Injeta dependências
        public auth: AngularFireAuth,
   ) {}
+
+  openSite(){
+    window.open("https://www.nba.com/news"); 
+    return false;
+  }
 }

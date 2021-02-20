@@ -18,9 +18,9 @@
 
 
     <!-- 3. 'card' clicável com o link do artigo -->
-    <ion-card class="ion-no-margin ion-margin-bottom" routerLink="/view/{{item.artId}}">
+    <ion-card class="ion-no-margin ion-margin-bottom caixa" routerLink="/view/{{item.artId}}">
 
-      <img src="{{ item.img }}" alt="{{ item.title }}">
+      <ion-img src="{{ item.img }}" alt="{{ item.title }}"></ion-img>
 
       <ion-card-header>
         <ion-card-title>{{ item.title }}</ion-card-title>
